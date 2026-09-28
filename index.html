@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anayat Fabrics</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --black:#151210;
+    --brown:#6e5142;
+    --gold:#b58a45;
+    --cream:#f8f3eb;
+    --white:#fffdf9;
+    --border:#e7ddd0;
+    --gray:#77716b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:var(--white);
+    color:var(--black);
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    background:var(--black);
+    color:white;
+    text-align:center;
+    padding:9px;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:80px;
+    border-bottom:1px solid var(--border);
+    background:rgba(255,253,249,.96);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-family:"DM Serif Display",serif;
+    font-size:29px;
+    white-space:nowrap;
+}
+
+.logo span{
+    display:block;
+    font-family:Poppins,sans-serif;
+    font-size:7px;
+    letter-spacing:4px;
+    text-align:center;
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--black);
+    text-decoration:none;
+    font-size:11px;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.nav-btn{
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-size:20px;
+    position:relative;
+}
+
+.cart-number{
+    position:absolute;
+    right:-8px;
+    top:-7px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+    background:var(--gold);
+    color:white;
+
+    font-size:9px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(20,15,11,.88),
+        rgba(20,15,11,.45),
+        rgba(20,15,11,.1)
+    ),
+    url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    color:white;
+}
+
+.hero-small{
+    color:#e2c27f;
+    letter-spacing:5px;
+    font-size:11px;
+}
+
+.hero h1{
+    font-family:"DM Serif Display",serif;
+    font-size:72px;
+    font-weight:400;
+    line-height:1.05;
+    max-width:700px;
+    margin:20px 0;
+}
+
+.hero p{
+    max-width:500px;
+    color:#eee;
+    font-size:13px;
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.primary-btn{
+    border:1px solid var(--gold);
+    background:var(--gold);
+    color:white;
+
+    padding:14px 28px;
+
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:600;
+
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    background:#96702f;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    width:90%;
+    max-width:1250px;
+    margin:90px auto;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading small{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:9px;
+}
+
+.heading h2{
+    font-family:"DM Serif Display",serif;
+    font-size:43px;
+    font-weight:400;
+    margin-top:8px;
+}
+
+.heading p{
+    color:var(--gray);
+    font-size:12px;
+    margin-top:7px;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.category{
+    height:380px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.category img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category:hover img{
+    transform:scale(1.07);
+}
+
+.category-content{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,.75)
+    );
+
+    color:white;
+}
+
+.category-content h3{
+    font-family:"DM Serif Display",serif;
+    font-size:28px;
+    font-weight:400;
+}
+
+/* ================= SHOP TOOLBAR ================= */
+
+.shop-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.search-box{
+    flex:1;
+    max-width:500px;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    height:45px;
+
+    border:1px solid var(--border);
+    background:white;
+
+    padding:0 15px;
+    outline:none;
+
+    font-size:12px;
+}
+
+.sort-select{
+    height:45px;
+    border:1px solid var(--border);
+    background:white;
+    padding:0 12px;
+    outline:none;
+    font-size:11px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    min-width:0;
+}
+
+.product-image{
+    height:400px;
+    position:relative;
+    overflow:hidden;
+    background:#eee;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+
+    background:var(--black);
+    color:white;
+
+    padding:6px 10px;
+
+    font-size:8px;
+    letter-spacing:1px;
+
+    z-index:2;
+}
+
+.wishlist{
+    position:absolute;
+    right:12px;
+    top:12px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+    border-radius:50%;
+
+    background:white;
+    cursor:pointer;
+
+    font-size:18px;
+
+    z-index:2;
+}
+
+.wishlist.active{
+    color:#a23b3b;
+}
+
+.product-info{
+    padding:15px 3px;
+}
+
+.product-info small{
+    color:var(--gold);
+    letter-spacing:1.5px;
+    font-size:8px;
+}
+
+.product-info h3{
+    font-size:14px;
+    font-weight:500;
+    margin-top:5px;
+}
+
+.price{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-top:8px;
+}
+
+.price strong{
+    font-size:14px;
+}
+
+.price del{
+    color:#aaa;
+    font-size:10px;
+}
+
+.add-button{
+    width:100%;
+    height:42px;
+
+    margin-top:12px;
+
+    border:1px solid var(--black);
+    background:var(--black);
+    color:white;
+
+    cursor:pointer;
+
+    font-size:9px;
+    letter-spacing:1.5px;
+
+    transition:.3s;
+}
+
+.add-button:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+/* ================= SALE BANNER ================= */
+
+.sale-banner{
+    width:90%;
+    max-width:1250px;
+    min-height:350px;
+
+    margin:90px auto;
+
+    padding:50px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(15,12,9,.88),
+        rgba(15,12,9,.35)
+    ),
+    url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+}
+
+.sale-banner h2{
+    font-family:"DM Serif Display",serif;
+    font-size:48px;
+    font-weight:400;
+    max-width:550px;
+}
+
+.sale-banner p{
+    font-size:12px;
+    color:#eee;
+    margin:12px 0 25px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--cream);
+    padding:90px 20px;
+    text-align:center;
+}
+
+.about-inner{
+    max-width:800px;
+    margin:auto;
+}
+
+.about-inner small{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:9px;
+}
+
+.about-inner h2{
+    font-family:"DM Serif Display",serif;
+    font-size:43px;
+    font-weight:400;
+    margin-top:10px;
+}
+
+.about-inner p{
+    color:var(--gray);
+    font-size:12px;
+    line-height:2;
+    margin-top:18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--black);
+    color:#aaa;
+    padding:65px 5% 25px;
+}
+
+.footer{
+    max-width:1250px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-brand{
+    font-family:"DM Serif Display",serif;
+    color:white;
+    font-size:28px;
+}
+
+.footer h4{
+    color:white;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.footer a{
+    display:block;
+    color:#aaa;
+    text-decoration:none;
+    font-size:10px;
+    margin-bottom:10px;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.copyright{
+    max-width:1250px;
+    margin:50px auto 0;
+    padding-top:20px;
+    border-top:1px solid #302b26;
+    text-align:center;
+    font-size:9px;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    z-index:3000;
+
+    transition:.3s;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= CART ================= */
+
+.cart{
+    position:absolute;
+    right:0;
+    top:0;
+
+    width:430px;
+    max-width:100%;
+    height:100%;
+
+    background:var(--white);
+
+    padding:25px;
+
+    transform:translateX(100%);
+    transition:.4s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.overlay.show .cart{
+    transform:translateX(0);
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid var(--border);
+    padding-bottom:18px;
+}
+
+.cart-header h2{
+    font-family:"DM Serif Display",serif;
+    font-size:28px;
+    font-weight:400;
+}
+
+.close{
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-size:23px;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.cart-item img{
+    width:70px;
+    height:82px;
+    object-fit:cover;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.cart-details h4{
+    font-size:12px;
+    font-weight:500;
+}
+
+.cart-details p{
+    color:var(--gold);
+    font-size:11px;
+    margin-top:4px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:8px;
+}
+
+.quantity button{
+    width:24px;
+    height:24px;
+    border:1px solid var(--border);
+    background:white;
+    cursor:pointer;
+}
+
+.remove{
+    border:0!important;
+    background:none!important;
+    color:#a33;
+    font-size:9px;
+    width:auto!important;
+}
+
+.cart-bottom{
+    border-top:1px solid var(--border);
+    padding-top:20px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.checkout-button{
+    width:100%;
+    height:50px;
+
+    border:0;
+    background:var(--black);
+    color:white;
+
+    cursor:pointer;
+
+    font-size:10px;
+    letter-spacing:1.5px;
+}
+
+/* ================= PRODUCT MODAL ================= */
+
+.product-modal{
+    position:absolute;
+
+    width:900px;
+    max-width:94%;
+
+    max-height:90vh;
+    overflow:auto;
+
+    background:var(--white);
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-45%);
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.overlay.show .product-modal{
+    transform:translate(-50%,-50%);
+    opacity:1;
+}
+
+.modal-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.modal-image{
+    min-height:550px;
+}
+
+.modal-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-content{
+    padding:45px;
+}
+
+.modal-content small{
+    color:var(--gold);
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+.modal-content h2{
+    font-family:"DM Serif Display",serif;
+    font-size:38px;
+    font-weight:400;
+    margin:10px 0;
+}
+
+.modal-price{
+    font-size:20px;
+    font-weight:600;
+    margin:15px 0;
+}
+
+.modal-description{
+    color:var(--gray);
+    font-size:12px;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.modal-label{
+    display:block;
+    font-size:10px;
+    font-weight:600;
+    margin:20px 0 8px;
+}
+
+.modal-select{
+    width:100%;
+    height:43px;
+    border:1px solid var(--border);
+    background:white;
+    padding:0 10px;
+}
+
+.modal-close{
+    position:absolute;
+    right:15px;
+    top:12px;
+
+    width:35px;
+    height:35px;
+
+    border:0;
+    border-radius:50%;
+
+    background:white;
+
+    font-size:20px;
+    cursor:pointer;
+
+    z-index:5;
+}
+
+/* ================= CHECKOUT ================= */
+
+.checkout-modal{
+    position:absolute;
+
+    width:850px;
+    max-width:94%;
+
+    max-height:90vh;
+    overflow:auto;
+
+    background:var(--white);
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+    padding:35px;
+}
+
+.checkout-modal h2{
+    font-family:"DM Serif Display",serif;
+    font-size:35px;
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:35px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:10px;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid var(--border);
+    background:white;
+    outline:none;
+    padding:12px;
+    font-size:11px;
+}
+
+.form-group textarea{
+    height:90px;
+    resize:none;
+}
+
+.order-summary{
+    background:var(--cream);
+    padding:20px;
+}
+
+.order-summary h3{
+    font-family:"DM Serif Display",serif;
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.summary-line{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    font-size:11px;
+    border-bottom:1px solid var(--border);
+}
+
+.summary-total{
+    display:flex;
+    justify-content:space-between;
+    margin-top:18px;
+    font-weight:700;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .navbar{
+        justify-content:space-between;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:68px;
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-content{
+        width:90%;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .section{
+        margin:65px auto;
+    }
+
+    .heading h2{
+        font-size:34px;
+    }
+
+    .categories{
+        gap:10px;
+    }
+
+    .category{
+        height:260px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-image{
+        height:250px;
+    }
+
+    .shop-toolbar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search-box{
+        max-width:none;
+    }
+
+    .sale-banner{
+        width:100%;
+        padding:30px 20px;
+    }
+
+    .sale-banner h2{
+        font-size:37px;
+    }
+
+    .footer{
+        grid-template-columns:1fr 1fr;
+        gap:30px;
+    }
+
+    .modal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal-image{
+        min-height:350px;
+    }
+
+    .modal-content{
+        padding:25px;
+    }
+
+    .checkout-grid{
+        grid-template-columns:1fr;
+    }
+
+    .checkout-modal{
+        padding:25px 18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+    FREE DELIVERY ON ORDERS ABOVE RS. 5,000
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <button
+        class="menu-btn"
+        onclick="toggleMobileMenu()"
+    >
+        ☰
+    </button>
+
+    <div class="logo">
+        Anayat Fabrics
+        <span>QUALITY • STYLE • ELEGANCE</span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#home">HOME</a>
+        </li>
+
+        <li>
+            <a href="#collections">COLLECTIONS</a>
+        </li>
+
+        <li>
+            <a href="#shop">SHOP</a>
+        </li>
+
+        <li>
+            <a href="#about">ABOUT</a>
+        </li>
+
+        <li>
+            <a href="#contact">CONTACT</a>
+        </li>
+
+    </ul>
+
+    <div class="nav-actions">
+
+        <button
+            class="nav-btn"
+            onclick="scrollToShop()"
+        >
+            ⌕
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="openCart()"
+        >
+            🛍️
+
+            <span
+                class="cart-number"
+                id="cartCount"
+            >
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+<div class="hero-content">
+
+    <div class="hero-small">
+        ANAYAT FABRICS
+    </div>
+
+    <h1>
+        Elegance woven
+        into every thread.
+    </h1>
+
+    <p>
+        Discover premium fabrics and timeless Pakistani
+        fashion designed for women who appreciate
+        quality, detail and elegance.
+    </p>
+
+    <a
+        href="#shop"
+        class="primary-btn"
+    >
+        SHOP COLLECTION
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- ================= COLLECTIONS ================= -->
+
+<section
+    class="section"
+    id="collections"
+>
+
+<div class="heading">
+
+    <small>
+        EXPLORE
+    </small>
+
+    <h2>
+        Our Collections
+    </h2>
+
+    <p>
+        Choose your perfect style.
+    </p>
+
+</div>
+
+
+<div class="categories">
+
+    <div
+        class="category"
+        onclick="filterCategory('Unstitched')"
+    >
+
+        <img
+            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=80"
+        >
+
+        <div class="category-content">
+            <h3>Unstitched</h3>
+        </div>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="filterCategory('Lawn')"
+    >
+
+        <img
+            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80"
+        >
+
+        <div class="category-content">
+            <h3>Lawn</h3>
+        </div>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="filterCategory('Festive')"
+    >
+
+        <img
+            src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=80"
+        >
+
+        <div class="category-content">
+            <h3>Festive</h3>
+        </div>
+
+    </div>
+
+
+    <div
+        class="category"
+        onclick="filterCategory('Premium')"
+    >
+
+        <img
+            src="https://images.unsplash.com/photo-1590735213920-68192a487bc2?auto=format&fit=crop&w=900&q=80"
+        >
+
+        <div class="category-content">
+            <h3>Premium</h3>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section
+    class="section"
+    id="shop"
+>
+
+<div class="heading">
+
+    <small>
+        SHOP
+    </small>
+
+    <h2>
+        Featured Collection
+    </h2>
+
+    <p>
+        Explore our latest designs.
+    </p>
+
+</div>
+
+
+<div class="shop-toolbar">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            oninput="renderProducts()"
+        >
+
+    </div>
+
+
+    <select
+        class="sort-select"
+        id="sortSelect"
+        onchange="renderProducts()"
+    >
+
+        <option value="default">
+            Sort by
+        </option>
+
+        <option value="low">
+            Price: Low to High
+        </option>
+
+        <option value="high">
+            Price: High to Low
+        </option>
+
+        <option value="name">
+            Name
+        </option>
+
+    </select>
+
+</div>
+
+
+<div
+    class="products"
+    id="products"
+></div>
+
+</section>
+
+
+<!-- ================= SALE ================= -->
+
+<section class="sale-banner">
+
+<div>
+
+    <small
+        style="
+        color:#e1bf79;
+        letter-spacing:4px;
+        font-size:9px;
+        "
+    >
+        SPECIAL COLLECTION
+    </small>
+
+    <h2>
+        Luxury fabrics.
+        Beautiful moments.
+    </h2>
+
+    <p>
+        Discover selected designs at special prices.
+    </p>
+
+    <a
+        href="#shop"
+        class="primary-btn"
+    >
+        SHOP NOW
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+<div class="about-inner">
+
+    <small>
+        OUR STORY
+    </small>
+
+    <h2>
+        Quality you can feel.
+    </h2>
+
+    <p>
+        Anayat Fabrics brings together carefully selected
+        fabrics, elegant designs and timeless Pakistani
+        fashion. Every collection is created with attention
+        to detail so you can dress beautifully for every
+        occasion.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+<div class="footer">
+
+    <div>
+
+        <div class="footer-brand">
+            Anayat Fabrics
+        </div>
+
+        <p
+            style="
+            font-size:10px;
+            line-height:1.9;
+            margin-top:12px;
+            max-width:300px;
+            "
+        >
+            Premium fabrics and elegant fashion
+            for every occasion.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>SHOP</h4>
+
+        <a href="#shop">New Arrivals</a>
+        <a href="#shop">Unstitched</a>
+        <a href="#shop">Lawn</a>
+        <a href="#shop">Festive</a>
+
+    </div>
+
+
+    <div>
+
+        <h4>HELP</h4>
+
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQs</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+
+    <div>
+
+        <h4>SOCIAL</h4>
+
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">TikTok</a>
+        <a href="#">WhatsApp</a>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+    © 2026 Anayat Fabrics. All Rights Reserved.
+</div>
+
+</footer>
+
+
+<!-- ================= CART OVERLAY ================= -->
+
+<div
+    class="overlay"
+    id="cartOverlay"
+    onclick="closeOverlay(event)"
+>
+
+<div class="cart">
+
+    <div class="cart-header">
+
+        <h2>
+            Shopping Bag
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    ></div>
+
+
+    <div class="cart-bottom">
+
+        <div class="total">
+
+            <span>
+                TOTAL
+            </span>
+
+            <span id="cartTotal">
+                Rs. 0
+            </span>
+
+        </div>
+
+        <button
+            class="checkout-button"
+            onclick="openCheckout()"
+        >
+            PROCEED TO CHECKOUT
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div
+    class="overlay"
+    id="productOverlay"
+    onclick="closeProductOutside(event)"
+>
+
+<div class="product-modal">
+
+    <button
+        class="modal-close"
+        onclick="closeProduct()"
+    >
+        ×
+    </button>
+
+    <div class="modal-grid">
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="modal-content">
+
+            <small id="modalCategory">
+                CATEGORY
+            </small>
+
+            <h2 id="modalName">
+                Product
+            </h2>
+
+            <div
+                class="modal-price"
+                id="modalPrice"
+            >
+                Rs. 0
+            </div>
+
+            <p
+                class="modal-description"
+                id="modalDescription"
+            ></p>
+
+
+            <label class="modal-label">
+                SIZE
+            </label>
+
+            <select
+                class="modal-select"
+                id="modalSize"
+            >
+
+                <option>Unstitched</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>XL</option>
+
+            </select>
+
+
+            <label class="modal-label">
+                COLOR
+            </label>
+
+            <select
+                class="modal-select"
+                id="modalColor"
+            >
+
+                <option>Default</option>
+                <option>Black</option>
+                <option>White</option>
+                <option>Beige</option>
+                <option>Maroon</option>
+
+            </select>
+
+
+            <button
+                class="add-button"
+                style="margin-top:25px"
+                id="modalAddButton"
+            >
+                ADD TO CART
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<div
+    class="overlay"
+    id="checkoutOverlay"
+>
+
+<div class="checkout-modal">
+
+    <button
+        class="modal-close"
+        onclick="closeCheckout()"
+    >
+        ×
+    </button>
+
+    <h2>
+        Checkout
+    </h2>
+
+
+    <div class="checkout-grid">
+
+
+        <!-- CUSTOMER FORM -->
+
+        <div>
+
+            <div class="form-group">
+
+                <label>
+                    FULL NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    PHONE NUMBER
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="03XXXXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    CITY
+                </label>
+
+                <input
+                    type="text"
+                    id="customerCity"
+                    placeholder="Your city"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    COMPLETE ADDRESS
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="House number, street, area..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    PAYMENT METHOD
+                </label>
+
+                <select id="paymentMethod">
+
+                    <option>
+                        Cash on Delivery
+                    </option>
+
+                    <option>
+                        Bank Transfer
+                    </option>
+
+                    <option>
+                        Easypaisa / JazzCash
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="placeOrder()"
+            >
+                PLACE ORDER ON WHATSAPP
+            </button>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="order-summary">
+
+            <h3>
+                Order Summary
+            </h3>
+
+            <div id="checkoutSummary"></div>
+
+            <div class="summary-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span id="checkoutTotal">
+                    Rs. 0
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   PRODUCTS
+   CUSTOMIZE YOUR PRODUCTS HERE
+===================================================== */
+
+const products = [
+
+    {
+        id:1,
+
+        name:"Ivory Garden Collection",
+
+        category:"Lawn",
+
+        price:4950,
+
+        oldPrice:5950,
+
+        badge:"NEW",
+
+        image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Elegant premium lawn fabric with a sophisticated design. Perfect for summer gatherings and everyday luxury."
+    },
+
+
+    {
+        id:2,
+
+        name:"Rose Heritage Suit",
+
+        category:"Unstitched",
+
+        price:6500,
+
+        oldPrice:8100,
+
+        badge:"SALE",
+
+        image:
+        "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Beautiful traditional design with elegant detailing and premium fabric."
+    },
+
+
+    {
+        id:3,
+
+        name:"Midnight Embroidery",
+
+        category:"Festive",
+
+        price:8950,
+
+        oldPrice:10500,
+
+        badge:"NEW",
+
+        image:
+        "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "A sophisticated festive collection featuring rich tones and elegant embroidery."
+    },
+
+
+    {
+        id:4,
+
+        name:"Classic Sand Collection",
+
+        category:"Premium",
+
+        price:7250,
+
+        oldPrice:8500,
+
+        badge:"SALE",
+
+        image:
+        "https://images.unsplash.com/photo-1590735213920-68192a487bc2?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "A timeless premium collection designed for refined everyday style."
+    },
+
+
+    {
+        id:5,
+
+        name:"Emerald Luxury",
+
+        category:"Premium",
+
+        price:9900,
+
+        oldPrice:11900,
+
+        badge:"NEW",
+
+        image:
+        "https://images.unsplash.com/photo-1583743814966-8936f37f3846?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Rich emerald tones with a luxurious finish for special occasions."
+    },
+
+
+    {
+        id:6,
+
+        name:"Classic White Lawn",
+
+        category:"Lawn",
+
+        price:4250,
+
+        oldPrice:4900,
+
+        badge:"SALE",
+
+        image:
+        "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Lightweight premium lawn with a clean and timeless aesthetic."
+    },
+
+
+    {
+        id:7,
+
+        name:"Maroon Festive",
+
+        category:"Festive",
+
+        price:8500,
+
+        oldPrice:9900,
+
+        badge:"NEW",
+
+        image:
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Deep maroon tones and beautiful details for festive evenings."
+    },
+
+
+    {
+        id:8,
+
+        name:"Beige Signature",
+
+        category:"Unstitched",
+
+        price:5750,
+
+        oldPrice:6800,
+
+        badge:"SALE",
+
+        image:
+        "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85",
+
+        description:
+        "Soft beige fabric with a versatile design suitable for multiple occasions."
+    }
+
+];
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+let cart = [];
+
+
+/* =====================================================
+   RENDER PRODUCTS
+===================================================== */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("products");
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const sort =
+        document
+        .getElementById("sortSelect")
+        .value;
+
+
+    let list =
+        products.filter(product =>
+
+            product.name
+            .toLowerCase()
+            .includes(search)
+
+            ||
+
+            product.category
+            .toLowerCase()
+            .includes(search)
+
+        );
+
+
+    if(sort === "low"){
+
+        list.sort(
+            (a,b) => a.price - b.price
+        );
+
+    }
+
+    if(sort === "high"){
+
+        list.sort(
+            (a,b) => b.price - a.price
+        );
+
+    }
+
+    if(sort === "name"){
+
+        list.sort(
+            (a,b) =>
+            a.name.localeCompare(b.name)
+        );
+
+    }
+
+
+    if(list.length === 0){
+
+        container.innerHTML = `
+            <p style="
+            grid-column:1/-1;
+            text-align:center;
+            color:#777;
+            padding:50px;">
+            No products found.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    container.innerHTML =
+        list.map(product => `
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <span class="badge">
+                    ${product.badge}
+                </span>
+
+                <button
+                    class="wishlist"
+                    onclick="toggleWishlist(this)"
+                >
+                    ♡
+                </button>
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    onclick="openProduct(${product.id})"
+                    style="cursor:pointer"
+                >
+
+            </div>
+
+
+            <div class="product-info">
+
+                <small>
+                    ${product.category}
+                </small>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="price">
+
+                    <strong>
+                        Rs. ${product.price.toLocaleString()}
+                    </strong>
+
+                    <del>
+                        Rs. ${product.oldPrice.toLocaleString()}
+                    </del>
+
+                </div>
+
+
+                <button
+                    class="add-button"
+                    onclick="addToCart(${product.id})"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
+
+function filterCategory(category){
+
+    document.getElementById("searchInput").value =
+        category;
+
+    renderProducts();
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =====================================================
+   PRODUCT DETAILS
+===================================================== */
+
+function openProduct(id){
+
+    const product =
+        products.find(
+            item => item.id === id
+        );
+
+    if(!product) return;
+
+
+    document.getElementById("modalImage").src =
+        product.image;
+
+    document.getElementById("modalCategory").textContent =
+        product.category;
+
+    document.getElementById("modalName").textContent =
+        product.name;
+
+    document.getElementById("modalPrice").textContent =
+        "Rs. " +
+        product.price.toLocaleString();
+
+    document.getElementById("modalDescription").textContent =
+        product.description;
+
+
+    document.getElementById("modalAddButton").onclick =
+        function(){
+
+            addToCart(product.id);
+
+            closeProduct();
+
+        };
+
+
+    document
+        .getElementById("productOverlay")
+        .classList.add("show");
+
+}
+
+
+function closeProduct(){
+
+    document
+        .getElementById("productOverlay")
+        .classList.remove("show");
+
+}
+
+
+function closeProductOutside(event){
+
+    if(event.target.id === "productOverlay"){
+
+        closeProduct();
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart(id){
+
+    const product =
+        products.find(
+            item => item.id === id
+        );
+
+    if(!product) return;
+
+
+    const existing =
+        cart.find(
+            item => item.id === id
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            id:product.id,
+
+            name:product.name,
+
+            price:product.price,
+
+            image:product.image,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* =====================================================
+   UPDATE CART
+===================================================== */
+
+function updateCart(){
+
+    const container =
+        document.getElementById("cartItems");
+
+    const count =
+        document.getElementById("cartCount");
+
+    const total =
+        document.getElementById("cartTotal");
+
+
+    let totalItems = 0;
+    let totalPrice = 0;
+
+
+    cart.forEach(item => {
+
+        totalItems += item.quantity;
+
+        totalPrice +=
+            item.price * item.quantity;
+
+    });
+
+
+    count.textContent =
+        totalItems;
+
+
+    total.textContent =
+        "Rs. " +
+        totalPrice.toLocaleString();
+
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+            <div style="
+            text-align:center;
+            color:#888;
+            font-size:12px;
+            padding-top:50px;">
+            Your shopping bag is empty.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+
+        cart.map((item,index)=>`
+
+        <div class="cart-item">
+
+            <img
+                src="${item.image}"
+                alt="${item.name}"
+            >
+
+            <div class="cart-details">
+
+                <h4>
+                    ${item.name}
+                </h4>
+
+                <p>
+                    Rs. ${item.price.toLocaleString()}
+                </p>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="changeQuantity(${index},-1)"
+                    >
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        onclick="changeQuantity(${index},1)"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        class="remove"
+                        onclick="removeFromCart(${index})"
+                    >
+                        REMOVE
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* =====================================================
+   QUANTITY
+===================================================== */
+
+function changeQuantity(index,value){
+
+    cart[index].quantity += value;
+
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   REMOVE
+===================================================== */
+
+function removeFromCart(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   CART OPEN / CLOSE
+===================================================== */
+
+function openCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("show");
+
+}
+
+
+function closeOverlay(event){
+
+    if(event.target.id === "cartOverlay"){
+
+        closeCart();
+
+    }
+
+}
+
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+function toggleWishlist(button){
+
+    button.classList.toggle("active");
+
+    button.textContent =
+        button.classList.contains("active")
+        ? "♥"
+        : "♡";
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Your shopping bag is empty."
+        );
+
+        return;
+
+    }
+
+
+    closeCart();
+
+    renderCheckout();
+
+
+    document
+        .getElementById("checkoutOverlay")
+        .classList.add("show");
+
+}
+
+
+function closeCheckout(){
+
+    document
+        .getElementById("checkoutOverlay")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   CHECKOUT SUMMARY
+===================================================== */
+
+function renderCheckout(){
+
+    const summary =
+        document.getElementById(
+            "checkoutSummary"
+        );
+
+    const total =
+        document.getElementById(
+            "checkoutTotal"
+        );
+
+
+    let totalPrice = 0;
+
+
+    summary.innerHTML =
+        cart.map(item=>{
+
+            const itemTotal =
+                item.price * item.quantity;
+
+            totalPrice += itemTotal;
+
+
+            return `
+
+            <div class="summary-line">
+
+                <span>
+                    ${item.name}
+                    × ${item.quantity}
+                </span>
+
+                <span>
+                    Rs. ${itemTotal.toLocaleString()}
+                </span>
+
+            </div>
+
+            `;
+
+        }).join("");
+
+
+    total.textContent =
+        "Rs. " +
+        totalPrice.toLocaleString();
+
+}
+
+
+/* =====================================================
+   WHATSAPP ORDER
+===================================================== */
+
+function placeOrder(){
+
+    const name =
+        document
+        .getElementById("customerName")
+        .value
+        .trim();
+
+    const phone =
+        document
+        .getElementById("customerPhone")
+        .value
+        .trim();
+
+    const city =
+        document
+        .getElementById("customerCity")
+        .value
+        .trim();
+
+    const address =
+        document
+        .getElementById("customerAddress")
+        .value
+        .trim();
+
+    const payment =
+        document
+        .getElementById("paymentMethod")
+        .value;
+
+
+    if(!name || !phone || !city || !address){
+
+        alert(
+            "Please fill all required fields."
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "Assalam-o-Alaikum Anayat Fabrics,%0A%0A";
+
+    message +=
+        "*New Order*%0A%0A";
+
+    message +=
+        "*Customer:* " +
+        encodeURIComponent(name) +
+        "%0A";
+
+    message +=
+        "*Phone:* " +
+        encodeURIComponent(phone) +
+        "%0A";
+
+    message +=
+        "*City:* " +
+        encodeURIComponent(city) +
+        "%0A";
+
+    message +=
+        "*Address:* " +
+        encodeURIComponent(address) +
+        "%0A";
+
+    message +=
+        "*Payment:* " +
+        encodeURIComponent(payment) +
+        "%0A%0A";
+
+
+    message +=
+        "*Products:*%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        const itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        message +=
+            "- " +
+            encodeURIComponent(item.name) +
+            " × " +
+            item.quantity +
+            " = Rs. " +
+            itemTotal +
+            "%0A";
+
+    });
+
+
+    message +=
+        "%0A*Total: Rs. " +
+        total +
+        "*";
+
+
+    /*
+       ===============================================
+       IMPORTANT:
+       Replace this number with your WhatsApp number.
+       Country code required.
+       
+       Example Pakistan:
+       923263440140
+       ===============================================
+    */
+
+    const whatsappNumber =
+        "923263440140";
+
+
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMobileMenu(){
+
+    const menu =
+        document.getElementById("navLinks");
+
+    if(menu.style.display === "flex"){
+
+        menu.style.display = "none";
+
+    }else{
+
+        menu.style.display = "flex";
+
+        menu.style.position = "absolute";
+
+        menu.style.top = "68px";
+
+        menu.style.left = "0";
+
+        menu.style.right = "0";
+
+        menu.style.padding = "20px";
+
+        menu.style.background = "#fffdf9";
+
+        menu.style.flexDirection = "column";
+
+        menu.style.gap = "18px";
+
+    }
+
+}
+
+
+/* =====================================================
+   SCROLL TO SHOP
+===================================================== */
+
+function scrollToShop(){
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
